@@ -1,4 +1,9 @@
 # Mobile Test Automation Using Robot Framework and Appium
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Setup for the test](#setup-for-the-test)
+- [Conducting Tests](#conducting-tests)
+- [Test Automation Architecture](#test-automation-architecture)
 
 ## Prerequisites
 
@@ -18,7 +23,7 @@
 
 ### 1. Python setup
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ``` 
 
 ### 2. Device setup
@@ -81,27 +86,6 @@ robot --include login tests/
 
 ## Test Automation Architecture
 
-├── apps/                # App binaries can be placed here
-│   ├──  takeNoteAd.apk   
-├── configs/             # Configuration files
-│   ├── .env             # Environment variables
-│   └── TakeNoteAppConfigs.env.robot
-├── data/                # Test data
-│   └── emails.csv       # Email test data for data-driven tests
-├── output/              # Generated test reports
-├── resources/           # Test resources
-│   ├── base/            # Base framework
-│   ├── keywords/        # Custom keywords for tests
-│   ├── libs/            # Python libraries
-│   ├── locators/        # Element locators
-│   └── pages/           # Page objects
-└── tests/               # Test suites
-    ├── Create_New_Note.robot
-    ├── Delete_Note.robot
-    ├── Login_With_Email_DataDriver.robot
-    ├── Login_With_Email.robot
-    └── Open_Application.robot
-
 - config: keeps the .env, you can change here to use other apps and new devices
 - data: keeps .csv files to be used by DataDriver driver.
 - resources: keeps the helper keywords and variables that test cases will use:
@@ -112,3 +96,9 @@ robot --include login tests/
   - libs: Python scripts that is used in test automation. We used an environment variable loader script.
 - tests: using resources creates test cases. 
 
+## Test Output
+
+After running tests, reports are generated in the `output/` directory, you can find the all tests result:
+
+- `report.html` – High-level summary of test results
+- `log.html` – Detailed step-by-step execution logs
