@@ -5,6 +5,16 @@ TakeNoteAd is created for testing purposes, it is simple note-taking mobile appl
 1. email-based authentication: only checks if the email is in a valid email format (like example@domain.com) and allows access if it passes this validation. If the email format is incorrect or missing required elements, the app displays an error popup message to the user. No actual server-side authentication or password verification is performed as this is a test application focused on UI interaction patterns.
 2. note creation with titles and content, categorization options, and note deletion functionality.
 
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="images/login.jpeg" width="250px" alt="Login Screen"/><br/><sub>Login Screen</sub></td>
+      <td align="center"><img src="images/note-listing.jpeg" width="250px" alt="Main Screen"/><br/><sub>Main Screen</sub></td>
+      <td align="center"><img src="images/note-addition.jpeg" width="250px" alt="Note Creation"/><br/><sub>Note Creation</sub></td>
+    </tr>
+  </table>
+</div>
+
 This repository contains automated tests built with Robot Framework and Appium to verify the app's core functionality, including login flows, note creation, and note deletion.
 
 ## Table of Contents
