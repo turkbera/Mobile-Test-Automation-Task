@@ -1,0 +1,2215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.10 on linux)" generated="2025-10-19T15:35:20.392088" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/bera/uzco/cases/ad/tests">
+<suite id="s1-s1" name="Create New Note" source="/home/bera/uzco/cases/ad/tests/Create_New_Note.robot">
+<kw name="Open Main Page" owner="MainPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:35:20.715868" elapsed="3.035520"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:20.715406" elapsed="3.036118"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:23.752287" elapsed="0.761927"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:23.752070" elapsed="0.762258"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:24.516639" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:24.514515" elapsed="0.055716"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:24.570851" elapsed="0.570770"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:25.143124" level="INFO">Typing text 'a@a.a' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:25.141781" elapsed="0.667372"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:35:24.570467" elapsed="1.238814"/>
+</kw>
+<arg>a@a.a</arg>
+<status status="PASS" start="2025-10-19T15:35:23.751773" elapsed="2.057563"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:25.810977" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:25.809678" elapsed="0.800162"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:25.809485" elapsed="0.800439"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:20.715092" elapsed="5.894875"/>
+</kw>
+<test id="s1-s1-t1" name="Should create a note and verify it is listed" line="13">
+<kw name="Press Add Note Button" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:26.611175" elapsed="0.708073"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:27.321983" level="INFO">Clicking element 'accessibility_id=Add note'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:27.319486" elapsed="0.162952"/>
+</kw>
+<arg>${ADD_NOTE_BUTTON}</arg>
+<status status="PASS" start="2025-10-19T15:35:26.610904" elapsed="0.871648"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:26.610605" elapsed="0.872034"/>
+</kw>
+<kw name="Verify Note Modal Appears" owner="MainPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${NOTE_TITLE_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:27.483177" elapsed="1.018624"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:27.482937" elapsed="1.018960"/>
+</kw>
+<kw name="Enter Note Title" owner="MainPage">
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:28.502810" elapsed="0.102616"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:28.607533" level="INFO">Typing text 'a' into text field 'accessibility_id=Note title input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:28.605798" elapsed="0.621577"/>
+</kw>
+<arg>${NOTE_TITLE_INPUT}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:28.502486" elapsed="0.725024"/>
+</kw>
+<arg>a</arg>
+<status status="PASS" start="2025-10-19T15:35:28.502186" elapsed="0.725413"/>
+</kw>
+<kw name="Enter Note Body" owner="MainPage">
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:29.228416" elapsed="0.649060"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:29.879659" level="INFO">Typing text 'body for a' into text field 'accessibility_id=Note content input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:29.877788" elapsed="0.619711"/>
+</kw>
+<arg>${NOTE_CONTENT_INPUT}</arg>
+<arg>${body}</arg>
+<status status="PASS" start="2025-10-19T15:35:29.228137" elapsed="1.269475"/>
+</kw>
+<arg>body for a</arg>
+<status status="PASS" start="2025-10-19T15:35:29.227839" elapsed="1.269853"/>
+</kw>
+<kw name="Choose Note Category" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:30.498393" elapsed="0.655418"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:31.155638" level="INFO">Clicking element 'accessibility_id=Select Urgent category'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:31.153984" elapsed="0.194505"/>
+</kw>
+<arg>${category_button}</arg>
+<status status="PASS" start="2025-10-19T15:35:30.498188" elapsed="0.850471"/>
+</kw>
+<arg>${CATEGORY_BUTTON_URGENT}</arg>
+<status status="PASS" start="2025-10-19T15:35:30.497896" elapsed="0.850812"/>
+</kw>
+<kw name="Press Save Note Button" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:31.349491" elapsed="0.746581"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:32.097809" level="INFO">Clicking element 'accessibility_id=SAVE'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:32.096259" elapsed="0.171017"/>
+</kw>
+<arg>${SAVE_NOTE_BUTTON}</arg>
+<status status="PASS" start="2025-10-19T15:35:31.349276" elapsed="0.918090"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:31.349017" elapsed="0.918393"/>
+</kw>
+<kw name="Verify Note Is Listed" owner="MainPageKeywords">
+<kw name="Build Note Locator By Title" owner="MainPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:35:32.268379" level="INFO">${locator} = accessibility_id=Open note a</msg>
+<var>${locator}</var>
+<arg>accessibility_id=Open note ${title}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:35:32.268200" elapsed="0.000202"/>
+</kw>
+<return>
+<value>${locator}</value>
+<status status="PASS" start="2025-10-19T15:35:32.268446" elapsed="0.000047"/>
+</return>
+<msg time="2025-10-19T15:35:32.268677" level="INFO">${locator} = accessibility_id=Open note a</msg>
+<var>${locator}</var>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:32.267986" elapsed="0.000712"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:32.268784" elapsed="0.672305"/>
+</kw>
+<arg>a</arg>
+<status status="PASS" start="2025-10-19T15:35:32.267712" elapsed="0.673470"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-19T15:35:33.941711" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-19T15:35:32.941435" elapsed="1.000371"/>
+</kw>
+<tag>createNote</tag>
+<tag>mainPage</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-10-19T15:35:26.610032" elapsed="7.331866"/>
+</test>
+<test id="s1-s1-t2" name="Should display the content of the note when clicked" line="23">
+<kw name="Display a note" owner="MainPageKeywords">
+<kw name="Build Note Locator By Title" owner="MainPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:35:33.943233" level="INFO">${locator} = accessibility_id=Open note a</msg>
+<var>${locator}</var>
+<arg>accessibility_id=Open note ${title}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:35:33.943079" elapsed="0.000176"/>
+</kw>
+<return>
+<value>${locator}</value>
+<status status="PASS" start="2025-10-19T15:35:33.943295" elapsed="0.000037"/>
+</return>
+<msg time="2025-10-19T15:35:33.943429" level="INFO">${locator} = accessibility_id=Open note a</msg>
+<var>${locator}</var>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:33.942868" elapsed="0.000581"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:33.944775" level="INFO">Clicking element 'accessibility_id=Open note a'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:33.943528" elapsed="0.207963"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-19T15:35:35.151976" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-19T15:35:34.151743" elapsed="1.000331"/>
+</kw>
+<arg>a</arg>
+<status status="PASS" start="2025-10-19T15:35:33.942615" elapsed="1.209531"/>
+</kw>
+<kw name="Page Should Contain Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:35.271277" level="INFO">Current page contains text 'body for a'.</msg>
+<arg>body for a</arg>
+<doc>Verifies that the current page contains ``text``.</doc>
+<status status="PASS" start="2025-10-19T15:35:35.152374" elapsed="0.118978"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-10-19T15:35:36.271918" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-19T15:35:35.271667" elapsed="1.000351"/>
+</kw>
+<tag>createNote</tag>
+<tag>mainPage</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-10-19T15:35:33.942184" elapsed="2.329937"/>
+</test>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:35:36.272722" elapsed="5.571122"/>
+</kw>
+<doc>Test suite for adding note
+Verifies:
+- Addition of a new note
+- Choosing category
+- Displaying correctly the saved note</doc>
+<status status="PASS" start="2025-10-19T15:35:20.421226" elapsed="21.422761"/>
+</suite>
+<suite id="s1-s2" name="Delete Note" source="/home/bera/uzco/cases/ad/tests/Delete_Note.robot">
+<test id="s1-s2-t1" name="Should delete a note and verifies it is not listed" line="13">
+<kw name="Open Main Page" owner="MainPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:35:41.859333" elapsed="3.065090"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:41.858716" elapsed="3.065940"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:44.926167" elapsed="0.776313"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:44.925688" elapsed="0.776970"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:45.705024" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:45.702847" elapsed="0.045573"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:45.749143" elapsed="0.541861"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:46.292721" level="INFO">Typing text 'a@a.a' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:46.291200" elapsed="0.624761"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:35:45.748763" elapsed="1.167371"/>
+</kw>
+<arg>a@a.a</arg>
+<status status="PASS" start="2025-10-19T15:35:44.925092" elapsed="1.991123"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:46.918949" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:46.916911" elapsed="0.732085"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:46.916543" elapsed="0.732608"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:41.857985" elapsed="5.791291"/>
+</kw>
+<kw name="Press Add Note Button" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:47.650937" elapsed="0.730098"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:48.383290" level="INFO">Clicking element 'accessibility_id=Add note'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:48.381203" elapsed="0.153990"/>
+</kw>
+<arg>${ADD_NOTE_BUTTON}</arg>
+<status status="PASS" start="2025-10-19T15:35:47.650269" elapsed="0.885065"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:47.649710" elapsed="0.885703"/>
+</kw>
+<kw name="Verify Note Modal Appears" owner="MainPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${NOTE_TITLE_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:48.536084" elapsed="1.019130"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:48.535777" elapsed="1.019518"/>
+</kw>
+<kw name="Enter Note Title" owner="MainPage">
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:49.556092" elapsed="0.095855"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:49.653718" level="INFO">Typing text 'x' into text field 'accessibility_id=Note title input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:49.652196" elapsed="0.662416"/>
+</kw>
+<arg>${NOTE_TITLE_INPUT}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:49.555857" elapsed="0.758916"/>
+</kw>
+<arg>x</arg>
+<status status="PASS" start="2025-10-19T15:35:49.555541" elapsed="0.759328"/>
+</kw>
+<kw name="Press Save Note Button" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:50.315738" elapsed="0.743809"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:51.061141" level="INFO">Clicking element 'accessibility_id=SAVE'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:51.059854" elapsed="0.171572"/>
+</kw>
+<arg>${SAVE_NOTE_BUTTON}</arg>
+<status status="PASS" start="2025-10-19T15:35:50.315455" elapsed="0.916197"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:50.315174" elapsed="0.916575"/>
+</kw>
+<kw name="Verify Note Is Listed" owner="MainPageKeywords">
+<kw name="Build Note Locator By Title" owner="MainPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:35:51.233757" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>accessibility_id=Open note ${title}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:35:51.233413" elapsed="0.000412"/>
+</kw>
+<return>
+<value>${locator}</value>
+<status status="PASS" start="2025-10-19T15:35:51.233911" elapsed="0.000057"/>
+</return>
+<msg time="2025-10-19T15:35:51.234167" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:51.232885" elapsed="0.001322"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:51.234418" elapsed="0.637546"/>
+</kw>
+<arg>x</arg>
+<status status="PASS" start="2025-10-19T15:35:51.232161" elapsed="0.640027"/>
+</kw>
+<kw name="Delete A Note" owner="MainPageKeywords">
+<kw name="Display a note" owner="MainPageKeywords">
+<kw name="Build Note Locator By Title" owner="MainPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:35:51.874886" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>accessibility_id=Open note ${title}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:35:51.874542" elapsed="0.000385"/>
+</kw>
+<return>
+<value>${locator}</value>
+<status status="PASS" start="2025-10-19T15:35:51.875023" elapsed="0.000050"/>
+</return>
+<msg time="2025-10-19T15:35:51.875311" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:51.874014" elapsed="0.001331"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:51.877879" level="INFO">Clicking element 'accessibility_id=Open note x'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:51.875494" elapsed="0.178763"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-19T15:35:53.054662" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-19T15:35:52.054405" elapsed="1.000356"/>
+</kw>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:51.873467" elapsed="1.181370"/>
+</kw>
+<kw name="Press Delete Note Button" owner="MainPage">
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.055492" elapsed="0.160609"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:53.218158" level="INFO">Clicking element 'accessibility_id=DELETE'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.216457" elapsed="0.125980"/>
+</kw>
+<arg>${DELETE_NOTE_BUTTON}</arg>
+<status status="PASS" start="2025-10-19T15:35:53.055272" elapsed="0.287332"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:53.055006" elapsed="0.287680"/>
+</kw>
+<arg>x</arg>
+<status status="PASS" start="2025-10-19T15:35:51.872583" elapsed="1.470157"/>
+</kw>
+<kw name="Verify A Note Is Deleted" owner="MainPageKeywords">
+<kw name="Build Note Locator By Title" owner="MainPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:35:53.345548" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>accessibility_id=Open note ${title}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.345314" elapsed="0.000306"/>
+</kw>
+<return>
+<value>${locator}</value>
+<status status="PASS" start="2025-10-19T15:35:53.345700" elapsed="0.000048"/>
+</return>
+<msg time="2025-10-19T15:35:53.345899" level="INFO">${locator} = accessibility_id=Open note x</msg>
+<var>${locator}</var>
+<arg>${title}</arg>
+<status status="PASS" start="2025-10-19T15:35:53.344970" elapsed="0.000958"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:35:53.939211" level="INFO">Current page does not contain element 'accessibility_id=Open note x'.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the current page does not contain the element with the ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.346060" elapsed="0.593223"/>
+</kw>
+<arg>x</arg>
+<doc>Assert that the note titled ${title} is no longer present in the list.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.344406" elapsed="0.594943"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:35:53.939606" elapsed="5.486476"/>
+</kw>
+<doc>Performs and verifies note addition and deletion.</doc>
+<tag>deleteNote</tag>
+<tag>mainPage</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-10-19T15:35:41.856409" elapsed="17.569933"/>
+</test>
+<doc>Test suite for deleting note
+Verifies:
+- Addition of a new note
+- Note correctly listed with the given title
+- When deleted it disappears from the list</doc>
+<status status="PASS" start="2025-10-19T15:35:41.845471" elapsed="17.581338"/>
+</suite>
+<suite id="s1-s3" name="Login With Email" source="/home/bera/uzco/cases/ad/tests/Login_With_Email.robot">
+<test id="s1-s3-t1" name="Should login with inputting just email" line="11">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:35:59.433443" elapsed="3.000446"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:59.433120" elapsed="3.000859"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:35:59.432189" elapsed="3.001833"/>
+</kw>
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:02.435112" elapsed="0.800593"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:02.434940" elapsed="0.800994"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:03.237860" elapsed="0.042213"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:03.237390" elapsed="0.042778"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:03.281827" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:03.280289" elapsed="0.044230"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:03.325102" elapsed="0.572852"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:03.899974" level="INFO">Typing text 'a@a.a' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:03.898272" elapsed="0.631210"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:03.324796" elapsed="1.204807"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:03.236484" elapsed="1.293185"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:04.531325" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:04.530074" elapsed="0.756925"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:04.529839" elapsed="0.757247"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:02.434528" elapsed="2.852602"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:05.287502" elapsed="0.724644"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:05.287278" elapsed="0.724990"/>
+</kw>
+<arg>a@a.a</arg>
+<status status="PASS" start="2025-10-19T15:36:02.434275" elapsed="3.578066"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:36:06.012663" elapsed="5.678012"/>
+</kw>
+<doc>Verify successful login with valid email format</doc>
+<tag>login</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-10-19T15:35:59.431291" elapsed="12.259551"/>
+</test>
+<test id="s1-s3-t2" name="Should input invalid email(no @ or .source) opens an alert and dismisses it" line="16">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:36:11.691942" elapsed="2.918193"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:11.691776" elapsed="2.918479"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:11.691492" elapsed="2.918812"/>
+</kw>
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:14.611804" elapsed="0.772588"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:14.611383" elapsed="0.773310"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:15.385585" elapsed="0.041829"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:15.385351" elapsed="0.042225"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:15.430009" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:15.427836" elapsed="0.042340"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:15.470927" elapsed="0.562822"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:16.035390" level="INFO">Typing text 'a' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:16.033903" elapsed="0.107042"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:15.470409" elapsed="0.670630"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:15.384960" elapsed="0.756129"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:16.143100" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:16.141467" elapsed="0.795524"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:16.141240" elapsed="0.795866"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:36:14.610928" elapsed="2.326238"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:36:16.937729" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:36:16.937546" elapsed="0.000205"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:36:16.937833" elapsed="0.720641"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:36:16.937333" elapsed="0.721321"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:36:17.659213" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:36:17.659086" elapsed="0.000152"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:17.739601" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:17.659731" elapsed="0.079958"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:17.741774" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:36:18.469027" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:17.739839" elapsed="0.729279"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:36:17.659431" elapsed="0.809769"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:36:17.658851" elapsed="0.810391"/>
+</kw>
+<arg>a</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:36:14.610542" elapsed="3.858737"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:36:18.469556" elapsed="5.611346"/>
+</kw>
+<doc>Verify invalid email shows alert with proper error message
+Application checks whether the given email is in the form of a valid email, if not displays an error message.</doc>
+<tag>login</tag>
+<tag>negative</tag>
+<status status="PASS" start="2025-10-19T15:36:11.691119" elapsed="12.389961"/>
+</test>
+<doc>Test suite for email login functionality
+Verifies
+- Valid email login attempt
+- Invalid email login attempt and error handling</doc>
+<status status="PASS" start="2025-10-19T15:35:59.427420" elapsed="24.653961"/>
+</suite>
+<suite id="s1-s4" name="Login With Email DataDriver" source="/home/bera/uzco/cases/ad/tests/Login_With_Email_DataDriver.robot">
+<test id="s1-s4-t1" name="Valid Email 1" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:36:24.109214" elapsed="2.964718"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:24.108982" elapsed="2.965063"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:24.108536" elapsed="2.965557"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.075919" elapsed="0.777180"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:27.075726" elapsed="0.777619"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.854383" elapsed="0.035665"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:27.854136" elapsed="0.036007"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:27.891760" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.890263" elapsed="0.047404"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.938218" elapsed="0.517117"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:28.459550" level="INFO">Typing text 'user@example.com' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:28.455627" elapsed="0.653009"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:27.937893" elapsed="1.170941"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:27.853724" elapsed="1.255259"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:29.115217" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:29.109885" elapsed="0.774608"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:29.109330" elapsed="0.775410"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:27.075307" elapsed="2.809535"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:29.885670" elapsed="0.731714"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:29.885137" elapsed="0.732453"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:27.075031" elapsed="3.542641"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.074749" elapsed="3.542999"/>
+</kw>
+<arg>email=user@example.com</arg>
+<arg>expected_result=valid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:36:27.074383" elapsed="3.543446"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:36:30.618122" elapsed="5.662845"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:24.106824" elapsed="12.174278"/>
+</test>
+<test id="s1-s4-t2" name="Valid Email 2" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:36:36.284483" elapsed="2.952469"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:36.284205" elapsed="2.952959"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:36.283844" elapsed="2.953419"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:39.240167" elapsed="0.774310"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:39.239749" elapsed="0.774924"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:40.016535" elapsed="0.040946"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:40.016121" elapsed="0.041525"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:40.060885" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:40.057933" elapsed="0.049070"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:40.107673" elapsed="0.514922"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:40.624148" level="INFO">Typing text 'test@test.com' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:40.622769" elapsed="0.633296"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:40.107288" elapsed="1.148905"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:40.015228" elapsed="1.241055"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:41.258683" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:41.256931" elapsed="0.709651"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:41.256529" elapsed="0.710157"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:39.239327" elapsed="2.727413"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:41.967209" elapsed="0.720997"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:41.966911" elapsed="0.721386"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:39.238813" elapsed="3.449530"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:36:39.238336" elapsed="3.450050"/>
+</kw>
+<arg>email=test@test.com</arg>
+<arg>expected_result=valid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:36:39.237763" elapsed="3.450674"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:36:42.688776" elapsed="5.568759"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:36.281501" elapsed="11.976303"/>
+</test>
+<test id="s1-s4-t3" name="Valid Email 3" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:36:48.259472" elapsed="2.844822"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:48.259289" elapsed="2.845165"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:48.259058" elapsed="2.845583"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.107193" elapsed="0.787695"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:51.106864" elapsed="0.788335"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.898255" elapsed="0.043065"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:51.897653" elapsed="0.043978"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:51.945800" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.941955" elapsed="0.052790"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.995367" elapsed="0.557765"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:52.555239" level="INFO">Typing text 'admin@company.org' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:52.553295" elapsed="0.608051"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:51.995041" elapsed="1.166394"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:51.895935" elapsed="1.265549"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:36:53.163307" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:36:53.161942" elapsed="0.775523"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:53.161717" elapsed="0.775882"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:51.106375" elapsed="2.831304"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:36:53.938322" elapsed="0.716131"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:53.937908" elapsed="0.716683"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:36:51.105949" elapsed="3.548728"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.105498" elapsed="3.549251"/>
+</kw>
+<arg>email=admin@company.org</arg>
+<arg>expected_result=valid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:36:51.105076" elapsed="3.549779"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:36:54.655228" elapsed="5.668155"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:36:48.258007" elapsed="12.065484"/>
+</test>
+<test id="s1-s4-t4" name="Valid Email 4" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:37:00.325238" elapsed="2.910917"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:00.325040" elapsed="2.911208"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:00.324818" elapsed="2.911479"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:03.237878" elapsed="0.775571"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:03.237648" elapsed="0.776085"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:04.015067" elapsed="0.040947"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:04.014788" elapsed="0.041400"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:04.059333" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:04.056871" elapsed="0.042272"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:04.100067" elapsed="0.549959"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:04.652101" level="INFO">Typing text 'john.doe@email.co.uk' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:04.650388" elapsed="0.623011"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:04.099552" elapsed="1.173940"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:04.014172" elapsed="1.259373"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:05.275485" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:05.274128" elapsed="1.280929"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:05.273842" elapsed="1.281481"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:03.237366" elapsed="3.318069"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:06.556220" elapsed="0.720410"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:06.555773" elapsed="0.720982"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:03.237098" elapsed="4.039703"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:37:03.236821" elapsed="4.040020"/>
+</kw>
+<arg>email=john.doe@email.co.uk</arg>
+<arg>expected_result=valid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:37:03.236508" elapsed="4.040386"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:37:07.277203" elapsed="5.656082"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:00.323757" elapsed="12.609671"/>
+</test>
+<test id="s1-s4-t5" name="Valid Email 5" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:37:12.935260" elapsed="2.861312"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:12.935080" elapsed="2.861678"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:12.934835" elapsed="2.862029"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Login with inputting just email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:15.801981" elapsed="0.799546"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:15.799240" elapsed="0.802499"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:16.602838" elapsed="0.039590"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:16.602590" elapsed="0.039934"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:16.644232" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:16.642708" elapsed="0.049498"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:16.693455" elapsed="0.551474"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:17.247051" level="INFO">Typing text 'info@website.net' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:17.245171" elapsed="0.625562"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:16.692887" elapsed="1.177930"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:16.602067" elapsed="1.268796"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:17.872445" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:17.871217" elapsed="0.752423"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:17.871000" elapsed="0.752786"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:15.798747" elapsed="2.825151"/>
+</kw>
+<kw name="Verify Login Is Successful" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${ADD_NOTE_BUTTON}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:18.624471" elapsed="0.725074"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:18.624165" elapsed="0.725534"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:15.798294" elapsed="3.551451"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:37:15.797867" elapsed="3.551921"/>
+</kw>
+<arg>email=info@website.net</arg>
+<arg>expected_result=valid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:37:15.797314" elapsed="3.552539"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:37:19.350151" elapsed="5.694966"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:12.933696" elapsed="12.111758"/>
+</test>
+<test id="s1-s4-t6" name="Invalid Email 1" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:37:25.053954" elapsed="3.089447"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:25.053055" elapsed="3.090818"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:25.051906" elapsed="3.092141"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:28.149524" elapsed="0.784864"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:28.148608" elapsed="0.786270"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:28.937380" elapsed="0.041710"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:28.936652" elapsed="0.042563"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:28.981772" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:28.979376" elapsed="0.051766"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:29.033813" elapsed="0.566508"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:29.605510" level="INFO">Typing text 'notemail' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:29.600790" elapsed="0.642017"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:29.031904" elapsed="1.211029"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:28.935550" elapsed="1.307452"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:30.245376" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:30.243506" elapsed="0.730169"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:30.243193" elapsed="0.730603"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:37:28.147607" elapsed="2.826267"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:30.974455" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:30.974342" elapsed="0.000135"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:37:30.974556" elapsed="0.726052"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:37:30.974121" elapsed="0.726826"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:31.703175" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:31.702601" elapsed="0.000690"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:31.800386" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:31.705038" elapsed="0.095451"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:31.802369" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:37:32.510847" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:31.800687" elapsed="0.710412"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:37:31.703891" elapsed="0.807476"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:37:31.701541" elapsed="0.810069"/>
+</kw>
+<arg>${email}</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:37:28.146553" elapsed="4.365258"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:37:28.145717" elapsed="4.366275"/>
+</kw>
+<arg>email=notemail</arg>
+<arg>expected_result=invalid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:37:28.144697" elapsed="4.367518"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:37:32.513155" elapsed="5.725873"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:25.046322" elapsed="13.192985"/>
+</test>
+<test id="s1-s4-t7" name="Invalid Email 2" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:37:38.243655" elapsed="2.867972"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:38.243286" elapsed="2.868654"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:38.242847" elapsed="2.869272"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.119087" elapsed="0.784352"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:41.118142" elapsed="0.785830"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.906167" elapsed="0.039935"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:41.905504" elapsed="0.040762"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:41.949047" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.946449" elapsed="0.043125"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.990252" elapsed="0.518624"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:42.516441" level="INFO">Typing text '@nodomain.com' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:42.509395" elapsed="0.648835"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:41.989875" elapsed="1.168856"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:41.904528" elapsed="1.254437"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:43.172467" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:43.160482" elapsed="0.795277"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:43.159507" elapsed="0.796563"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:37:41.116931" elapsed="2.839338"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:43.958432" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:43.957903" elapsed="0.000645"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:37:43.959089" elapsed="0.687591"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:37:43.956907" elapsed="0.689895"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:44.647576" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:44.647382" elapsed="0.000235"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:44.727415" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:44.648163" elapsed="0.079501"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:44.732689" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:37:44.920879" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:44.728071" elapsed="0.192937"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:37:44.647806" elapsed="0.273322"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:37:44.647023" elapsed="0.274150"/>
+</kw>
+<arg>${email}</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:37:41.115475" elapsed="3.805736"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.114282" elapsed="3.806965"/>
+</kw>
+<arg>email=@nodomain.com</arg>
+<arg>expected_result=invalid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:37:41.112870" elapsed="3.808425"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:37:44.921641" elapsed="5.790884"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:38.240134" elapsed="12.472844"/>
+</test>
+<test id="s1-s4-t8" name="Invalid Email 3" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:37:50.722373" elapsed="2.977566"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:50.721419" elapsed="2.978870"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:50.720179" elapsed="2.980310"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:53.708465" elapsed="0.769958"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:53.707057" elapsed="0.771533"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:54.479475" elapsed="0.032811"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:54.479248" elapsed="0.033136"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:54.514122" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:54.512514" elapsed="0.053016"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:54.566394" elapsed="0.567802"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:55.141433" level="INFO">Typing text 'user@' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:55.134798" elapsed="0.636173"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:54.565899" elapsed="1.205468"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:37:54.478843" elapsed="1.292801"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:55.776277" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:55.773365" elapsed="0.775336"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:55.772211" elapsed="0.776806"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:37:53.705672" elapsed="2.843542"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:56.551476" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:56.550837" elapsed="0.000827"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:37:56.552101" elapsed="0.121552"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:37:56.549829" elapsed="0.123945"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:37:56.674431" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:37:56.674275" elapsed="0.000189"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:57.263043" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:37:56.674943" elapsed="0.588354"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:37:57.271078" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:37:57.477142" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:37:57.263928" elapsed="0.213413"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:37:56.674646" elapsed="0.802904"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:37:56.673972" elapsed="0.803768"/>
+</kw>
+<arg>${email}</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:37:53.704381" elapsed="3.773508"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:37:53.703178" elapsed="3.774847"/>
+</kw>
+<arg>email=user@</arg>
+<arg>expected_result=invalid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:37:53.701504" elapsed="3.776694"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:37:57.478913" elapsed="5.674836"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:37:50.714082" elapsed="12.439867"/>
+</test>
+<test id="s1-s4-t9" name="Invalid Email 4" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:38:03.158107" elapsed="2.979942"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:03.157796" elapsed="2.980353"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:03.157305" elapsed="2.980896"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:06.139806" elapsed="0.998087"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:06.139593" elapsed="0.998529"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:07.140227" elapsed="0.056856"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:07.139489" elapsed="0.057861"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:07.200616" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:07.197696" elapsed="0.078576"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:07.278843" elapsed="0.571141"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:07.854047" level="INFO">Typing text '@' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:07.850421" elapsed="0.629343"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:38:07.277149" elapsed="1.203174"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:38:07.138613" elapsed="1.342117"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:08.489270" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:08.482807" elapsed="0.796837"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:08.481301" elapsed="0.798650"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:38:06.139318" elapsed="3.140831"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:38:09.282288" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:38:09.281768" elapsed="0.000633"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:38:09.283067" elapsed="0.687985"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:38:09.280792" elapsed="0.690574"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:38:09.973671" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:38:09.973006" elapsed="0.000882"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:10.086265" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:09.976594" elapsed="0.110106"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:10.095450" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:38:10.824091" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:10.087471" elapsed="0.736710"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:38:09.974742" elapsed="0.849530"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:38:09.972018" elapsed="0.852329"/>
+</kw>
+<arg>${email}</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:38:06.139041" elapsed="4.685354"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:38:06.138769" elapsed="4.685674"/>
+</kw>
+<arg>email=@</arg>
+<arg>expected_result=invalid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:38:06.138459" elapsed="4.686044"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:38:10.824781" elapsed="5.672968"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:03.154456" elapsed="13.343819"/>
+</test>
+<test id="s1-s4-t10" name="Invalid Email 5" line="12">
+<kw name="Open Login Page" owner="LoginPageKeywords" type="SETUP">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:38:16.508195" elapsed="2.960119"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:16.506991" elapsed="2.961481"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:16.505891" elapsed="2.962665"/>
+</kw>
+<kw name="Test Email Input">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Attempt Login With Invalid Email" owner="LoginPageKeywords">
+<kw name="Login" owner="LoginPageKeywords">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:19.472043" elapsed="0.787754"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:19.471632" elapsed="0.788477"/>
+</kw>
+<kw name="Input User Email" owner="LoginPage">
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:20.262510" elapsed="0.043360"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:20.261972" elapsed="0.044079"/>
+</kw>
+<kw name="Clear Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:20.311609" level="INFO">Clear text field 'accessibility_id=Email input'</msg>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Clears the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:20.306316" elapsed="0.059310"/>
+</kw>
+<kw name="Input Text When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:20.366774" elapsed="0.572452"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:20.942798" level="INFO">Typing text 'user@domain' into text field 'accessibility_id=Email input'</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:20.939604" elapsed="0.659226"/>
+</kw>
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:38:20.366041" elapsed="1.233024"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-10-19T15:38:20.260836" elapsed="1.338386"/>
+</kw>
+<kw name="Submit Login" owner="LoginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:21.606673" level="INFO">Clicking element 'accessibility_id=Submit login'.</msg>
+<arg>${LOGIN_SUBMIT_BUTTON}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:21.600669" elapsed="0.787821"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:21.599777" elapsed="0.789084"/>
+</kw>
+<arg>${invalid_email}</arg>
+<status status="PASS" start="2025-10-19T15:38:19.471062" elapsed="2.918189"/>
+</kw>
+<kw name="Verify Invalid Email Warning Appears" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:38:22.391464" level="INFO">${alert_text} = enter a valid email</msg>
+<var>${alert_text}</var>
+<arg>enter a valid email</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:38:22.390951" elapsed="0.000683"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${alert_text}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-19T15:38:22.392102" elapsed="0.713135"/>
+</kw>
+<doc>Verify that React Native Alert with 'Please enter a valid email address' appears</doc>
+<status status="PASS" start="2025-10-19T15:38:22.389955" elapsed="0.715595"/>
+</kw>
+<kw name="Dismiss Alert Dialog" owner="LoginPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-10-19T15:38:23.108037" level="INFO">${ok_button} = android:id/button1</msg>
+<var>${ok_button}</var>
+<arg>android:id/button1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-10-19T15:38:23.107213" elapsed="0.001005"/>
+</kw>
+<kw name="Click Element When Visible" owner="BasePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:23.225831" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:23.111068" elapsed="0.114889"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-10-19T15:38:23.229696" level="INFO">Clicking element 'android:id/button1'.</msg>
+<msg time="2025-10-19T15:38:23.384090" level="INFO">criteria is android:id/button1</msg>
+<arg>${locator}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-19T15:38:23.226218" elapsed="0.158124"/>
+</kw>
+<arg>${ok_button}</arg>
+<status status="PASS" start="2025-10-19T15:38:23.109178" elapsed="0.275502"/>
+</kw>
+<doc>Dismiss the React Native Alert by tapping OK</doc>
+<status status="PASS" start="2025-10-19T15:38:23.106200" elapsed="0.278711"/>
+</kw>
+<arg>${email}</arg>
+<doc>Try to login with invalid email and verify error appears</doc>
+<status status="PASS" start="2025-10-19T15:38:19.470500" elapsed="3.914610"/>
+</kw>
+<arg>'${expected_result}' == 'valid'</arg>
+<arg>Login With Inputting Just Email</arg>
+<arg>${email}</arg>
+<arg>ELSE</arg>
+<arg>Attempt Login With Invalid Email</arg>
+<arg>${email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-10-19T15:38:19.469764" elapsed="3.915530"/>
+</kw>
+<arg>email=user@domain</arg>
+<arg>expected_result=invalid</arg>
+<tag>DataDriver</tag>
+<tag>login</tag>
+<doc>Template keyword for email validation
+Accepts email and expected result:
+- email: Email address
+- expected_result: either 'valid' or 'invalid'
+Tests whether the emails are in correct form, and the app handles them correctly.</doc>
+<status status="PASS" start="2025-10-19T15:38:19.469022" elapsed="3.916498"/>
+</kw>
+<kw name="Close Application" owner="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2025-10-19T15:38:23.386400" elapsed="5.786010"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:16.499528" elapsed="12.673364"/>
+</test>
+<doc>Data driven login test using DataDriver driver and csv</doc>
+<status status="PASS" start="2025-10-19T15:36:24.081908" elapsed="125.092514"/>
+</suite>
+<suite id="s1-s5" name="Open Application" source="/home/bera/uzco/cases/ad/tests/Open_Application.robot">
+<test id="s1-s5-t1" name="Should open application and verify input field is displayed" line="9">
+<kw name="Open Take Note App" owner="BasePage">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICE_NAME}</arg>
+<arg>appPackage=${ANDROID_APP_PACKAGE}</arg>
+<arg>appActivity=${ANDROID_ACTIVITY_NAME}</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2025-10-19T15:38:29.195461" elapsed="2.953897"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:29.194513" elapsed="2.955227"/>
+</kw>
+<kw name="Verify Email Input Filed Is Displayed" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${LOGIN_EMAIL_INPUT}</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-19T15:38:32.151824" elapsed="0.776115"/>
+</kw>
+<status status="PASS" start="2025-10-19T15:38:32.150653" elapsed="0.777452"/>
+</kw>
+<tag>OpenApplication</tag>
+<tag>positive</tag>
+<status status="PASS" start="2025-10-19T15:38:29.192830" elapsed="3.735579"/>
+</test>
+<doc>Test suite for application openning.
+Tested by verifying that the email input field is displayed.</doc>
+<status status="PASS" start="2025-10-19T15:38:29.176814" elapsed="3.752202"/>
+</suite>
+<status status="PASS" start="2025-10-19T15:35:20.393087" elapsed="192.537512"/>
+</suite>
+<statistics>
+<total>
+<stat pass="16" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">createNote</stat>
+<stat pass="1" fail="0" skip="0">deleteNote</stat>
+<stat pass="2" fail="0" skip="0">login</stat>
+<stat pass="3" fail="0" skip="0">mainPage</stat>
+<stat pass="1" fail="0" skip="0">negative</stat>
+<stat pass="1" fail="0" skip="0">OpenApplication</stat>
+<stat pass="5" fail="0" skip="0">positive</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="16" fail="0" skip="0">Tests</stat>
+<stat name="Create New Note" id="s1-s1" pass="2" fail="0" skip="0">Tests.Create New Note</stat>
+<stat name="Delete Note" id="s1-s2" pass="1" fail="0" skip="0">Tests.Delete Note</stat>
+<stat name="Login With Email" id="s1-s3" pass="2" fail="0" skip="0">Tests.Login With Email</stat>
+<stat name="Login With Email DataDriver" id="s1-s4" pass="10" fail="0" skip="0">Tests.Login With Email DataDriver</stat>
+<stat name="Open Application" id="s1-s5" pass="1" fail="0" skip="0">Tests.Open Application</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

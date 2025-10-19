@@ -1,0 +1,5 @@
+robotframework==7.3.2
+robotframework-appiumlibrary
+robotframework-datadriver
+python-dotenv
+Appium-Python-Client

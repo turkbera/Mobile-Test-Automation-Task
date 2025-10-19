@@ -1,0 +1,114 @@
+# Mobile Test Automation Using Robot Framework and Appium
+
+## Prerequisites
+
+- Python:
+  - robotframework==7.3.2
+  - robotframework-appiumlibrary
+  - robotframework-datadriver
+  - python-dotenv
+  - Appium-Python-Client
+- Appium
+  - uiautomator2 driver
+- For the android device:
+  - adb
+  - either an android device or android emulator(you can use android studio)
+
+## Setup for the test
+
+### 1. Python setup
+```
+pip install requirements.txt
+``` 
+
+### 2. Device setup
+
+#### a. Using physical android device
+1. Install the apk from repository, or use your own app.
+2. Install adb, you can find the information [here](https://developer.android.com/tools/adb)
+3. Connect your android device to computer via USB, you need to enable USB debugging in developer options. To enable developer options follow the [instructions](https://developer.android.com/studio/debug/dev-options)
+
+#### b. Using Android Studio Emulator
+
+1. Download and install Android Studio from the official website. Follow the installation wizard and make sure to install the Android SDK during setup.
+2. You can create emulator by opening AVD Manager in Android Studio. Click on "Tools > AVD Manager" or the AVD Manager icon in the toolbar, then select "Create Virtual Device" and follow the wizard to choose a device definition, system image, and configuration settings
+3. You can start emulator from within Android Studio or command line. In Android Studio, open AVD Manager and click the play button next to your emulator. 
+
+### 3. Configuring the test automation
+1. Using adb cli, list the connected devices:
+```
+adb devices
+```
+2. You can find your device name, change the 'ANDROID_DEVICE_NAME' from config file [.env](configs/.env)
+
+3. If you are using the apk in this repo, leave other fields unchanged. If you want to write your own tests for another app, you can find the 'ANDROID_APP_PACKAGE' and ,'ANDROID_ACTIVITY_NAME' by using Apk Info app.
+
+### 4. Appium Server Setup
+
+1. Install Node.js and npm:
+   - Download and install Node.js from [nodejs.org](https://nodejs.org/en/download/) which includes npm
+   - Verify installation with `node --version` and `npm --version`
+
+2. Install Appium and UIAutomator2 driver:
+   - Option 1 (Global installation): 
+     ```
+     npm install -g appium
+     appium driver install uiautomator2
+     ```
+   - Option 2 (Project installation): 
+     ```
+     npm install
+     ```
+     This installs Appium and UIAutomator2 driver as specified in package.json
+
+3. Starting the Appium server:
+   - For global installation: Run `appium` in your terminal
+   - For project installation: Run `npx appium` in your terminal
+   - Keep this terminal window open while running tests
+
+## Conducting Tests
+
+You can run all the tests using
+```
+robot -d output/ tests/
+```
+
+Using tags you can specify the specific tests, the tags are: login, createNote, mainPage, dataDriver, OpenApplication, positive, negative. For example:
+
+```
+robot --include login tests/
+```
+
+## Test Automation Architecture
+
+├── apps/                # App binaries can be placed here
+│   ├──  takeNoteAd.apk   
+├── configs/             # Configuration files
+│   ├── .env             # Environment variables
+│   └── TakeNoteAppConfigs.env.robot
+├── data/                # Test data
+│   └── emails.csv       # Email test data for data-driven tests
+├── output/              # Generated test reports
+├── resources/           # Test resources
+│   ├── base/            # Base framework
+│   ├── keywords/        # Custom keywords for tests
+│   ├── libs/            # Python libraries
+│   ├── locators/        # Element locators
+│   └── pages/           # Page objects
+└── tests/               # Test suites
+    ├── Create_New_Note.robot
+    ├── Delete_Note.robot
+    ├── Login_With_Email_DataDriver.robot
+    ├── Login_With_Email.robot
+    └── Open_Application.robot
+
+- config: keeps the .env, you can change here to use other apps and new devices
+- data: keeps .csv files to be used by DataDriver driver.
+- resources: keeps the helper keywords and variables that test cases will use:
+  - base: common keywords are defined here. The keywords being used across project, e.g. Click Element When Visible
+  - locators: page based locators, seperate locator robot file for each app page.
+  - pages: atomic operations per page, e.g Press Add Note Button for MainPage.robot
+  - keywords: complex keywords using the atomic operations from pages, e.g. Login keyword uses Input User Email and Submit Login
+  - libs: Python scripts that is used in test automation. We used an environment variable loader script.
+- tests: using resources creates test cases. 
+

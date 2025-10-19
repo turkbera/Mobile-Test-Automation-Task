@@ -1,0 +1,11 @@
+*** Test Cases ***;${email};${expected_result}
+Valid Email 1;user@example.com;valid
+Valid Email 2;test@test.com;valid
+Valid Email 3;admin@company.org;valid
+Valid Email 4;john.doe@email.co.uk;valid
+Valid Email 5;info@website.net;valid
+Invalid Email 1;notemail;invalid
+Invalid Email 2;@nodomain.com;invalid
+Invalid Email 3;user@;invalid
+Invalid Email 4;@;invalid
+Invalid Email 5;user@domain;invalid
