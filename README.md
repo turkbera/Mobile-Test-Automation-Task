@@ -1,4 +1,12 @@
 # Mobile Test Automation Using Robot Framework and Appium
+## Introduction
+
+TakeNoteAd is created for testing purposes, it is simple note-taking mobile application that allows users to create, view, and manage notes on Android devices. The app features:
+1. email-based authentication: only checks if the email is in a valid email format (like example@domain.com) and allows access if it passes this validation. If the email format is incorrect or missing required elements, the app displays an error popup message to the user. No actual server-side authentication or password verification is performed as this is a test application focused on UI interaction patterns.
+2. note creation with titles and content, categorization options, and note deletion functionality.
+
+This repository contains automated tests built with Robot Framework and Appium to verify the app's core functionality, including login flows, note creation, and note deletion.
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Setup for the test](#setup-for-the-test)
@@ -100,5 +108,5 @@ robot --include login tests/
 
 After running tests, reports are generated in the `output/` directory, you can find the all tests result:
 
-- `report.html` – High-level summary of test results
-- `log.html` – Detailed step-by-step execution logs
+- `report.html` – High-level summary of test results: [report](output/report.html)
+- `log.html` – Detailed step-by-step execution logs: [log](output/log.html)
