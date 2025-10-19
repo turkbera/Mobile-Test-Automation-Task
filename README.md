@@ -102,7 +102,7 @@ robot --include login tests/
   - pages: atomic operations per page, e.g Press Add Note Button for MainPage.robot
   - keywords: complex keywords using the atomic operations from pages, e.g. Login keyword uses Input User Email and Submit Login
   - libs: Python scripts that is used in test automation. We used an environment variable loader script.
-- tests: using resources creates test cases. 
+- tests: contains Robot Framework test cases that use resources, locators, and keywords. Each .robot file represents a logical test scenario (e.g., login, create note, delete note).
 
 ## Test Output
 
