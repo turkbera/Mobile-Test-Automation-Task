@@ -1,7 +1,7 @@
 # Mobile Test Automation Using Robot Framework and Appium
 ## Introduction
 
-TakeNoteAd is created for testing purposes, it is simple note-taking mobile application that allows users to create, view, and manage notes on Android devices. The app features:
+TakeNoteAd is created using React Native for testing purposes, it is simple note-taking mobile application that allows users to create, view, and manage notes on Android devices. The app features:
 1. email-based authentication: only checks if the email is in a valid email format (like example@domain.com) and allows access if it passes this validation. If the email format is incorrect or missing required elements, the app displays an error popup message to the user. No actual server-side authentication or password verification is performed as this is a test application focused on UI interaction patterns.
 2. note creation with titles and content, categorization options, and note deletion functionality.
 
